@@ -1,2 +1,2 @@
-# com.airthings
-Homey application using the Airthings OAuth2 API
+# com.airthings.restapi
+Homey application using the Airthings REST API with OAuth2 authentication. 

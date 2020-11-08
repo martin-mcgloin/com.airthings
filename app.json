@@ -1,14 +1,14 @@
 {
-  "id": "com.airthings",
+  "id": "com.airthings.restapi",
   "version": "1.0.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "brandColor": "#e5ac00",
   "name": {
-    "en": "Airthings for Business"
+    "en": "Airthings Ecosystem"
   },
   "description": {
-    "en": "Integrate with Airthings for Business accounts (requires subscription)"
+    "en": "Integrate your Airthings ecosystem of indoor air quality monitoring devices using the Airthings REST API (OAuth2). Requires an Airthings Hub."
   },
   "category": [
     "climate"

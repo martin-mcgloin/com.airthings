@@ -1,5 +1,5 @@
 {
-  "name": "com.airthings",
+  "name": "com.airthings.restapi",
   "version": "0.1.0",
   "main": "app.js",
   "devDependencies": {
