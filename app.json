@@ -117,26 +117,26 @@
           "template": "add_devices"
         }
       ],
-      "repair": [ 
+      "repair": [
         {
           "id": "login_oauth2",
           "template": "login_oauth2"
         }
       ],
       "settings": [
-            {
-              "id": "pollInterval",
-              "type": "number",
-              "label": {
-                "en": "Poll interval in minutes (default is 2 minutes)"
-              },
-              "value": 2,
-              "min": 1,
-              "max": 999,
-              "hint": {
-                "en": "Define how often Homey should poll the Airthings API for latest samples from the Wave Plus."
-              }
-            }
+        {
+          "id": "pollInterval",
+          "type": "number",
+          "label": {
+            "en": "Poll interval in minutes (default is 2 minutes)"
+          },
+          "value": 2,
+          "min": 1,
+          "max": 999,
+          "hint": {
+            "en": "Define how often Homey should poll the Airthings API for latest samples from the Wave Plus."
+          }
+        }
       ]
     },
     {
@@ -180,7 +180,7 @@
           "template": "add_devices"
         }
       ],
-      "repair": [ 
+      "repair": [
         {
           "id": "login_oauth2",
           "template": "login_oauth2"
@@ -200,7 +200,68 @@
             "en": "Define how often Homey should poll the Airthings API for latest samples from the Wave Mini."
           }
         }
-  ]
+      ]
+    },
+    {
+      "id": "airthings-wave",
+      "name": {
+        "en": "Airthings Wave"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_radon",
+        "measure_temperature",
+        "measure_humidity",
+        "measure_pressure"
+      ],
+      "images": {
+        "large": "/drivers/airthings-wave/assets/images/large.png",
+        "small": "/drivers/airthings-wave/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "AA",
+          "AA"
+        ]
+      },
+      "pair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        }
+      ],
+      "settings": [
+        {
+          "id": "pollInterval",
+          "type": "number",
+          "label": {
+            "en": "Poll interval in minutes (default is 2 minutes)"
+          },
+          "value": 2,
+          "min": 1,
+          "max": 999,
+          "hint": {
+            "en": "Define how often Homey should poll the Airthings API for latest samples from the Wave."
+          }
+        }
+      ]
     }
   ]
 }
