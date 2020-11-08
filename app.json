@@ -153,8 +153,8 @@
         "measure_pressure"
       ],
       "images": {
-        "large": "/drivers/airthings-mini/assets/images/large.png",
-        "small": "/drivers/airthings-mini/assets/images/small.png"
+        "large": "/drivers/airthings-wave-mini/assets/images/large.png",
+        "small": "/drivers/airthings-wave-mini/assets/images/small.png"
       },
       "energy": {
         "batteries": [
