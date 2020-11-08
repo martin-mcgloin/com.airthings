@@ -1,0 +1,188 @@
+{
+  "id": "com.airthings",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "brandColor": "#e5ac00",
+  "name": {
+    "en": "Airthings for Business"
+  },
+  "description": {
+    "en": "Integrate with Airthings for Business accounts (requires subscription)"
+  },
+  "category": [
+    "climate"
+  ],
+  "permissions": [],
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "author": {
+    "name": "Martin McGloin",
+    "email": "martin.mcgloin@gmail.com"
+  },
+  "capabilities": {
+    "measure_radon": {
+      "type": "number",
+      "title": {
+        "en": "Radon"
+      },
+      "icon": "/assets/radon.svg",
+      "insights": false,
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "bq"
+      },
+      "min": 0,
+      "max": 4000,
+      "step": 1
+    },
+    "measure_voc": {
+      "type": "number",
+      "title": {
+        "en": "VOC"
+      },
+      "icon": "/assets/voc.svg",
+      "insights": false,
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "ppb"
+      },
+      "min": 0,
+      "max": 3000,
+      "step": 1
+    }
+  },
+  "drivers": [
+    {
+      "id": "airthings-wave-plus",
+      "name": {
+        "en": "Airthings Wave Plus"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_radon",
+        "measure_voc",
+        "measure_humidity",
+        "measure_pressure",
+        "measure_temperature",
+        "measure_co2"
+      ],
+      "images": {
+        "large": "/drivers/airthings-wave-plus/assets/images/large.png",
+        "small": "/drivers/airthings-wave-plus/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "AA",
+          "AA"
+        ]
+      },
+      "pair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [ 
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        }
+      ],
+      "settings": [
+            {
+              "id": "pollInterval",
+              "type": "number",
+              "label": {
+                "en": "Poll interval in minutes (default is 2 minutes)"
+              },
+              "value": 2,
+              "min": 1,
+              "max": 999,
+              "hint": {
+                "en": "Define how often Homey should poll the Airthings API for latest samples from the Wave Plus."
+              }
+            }
+      ]
+    },
+    {
+      "id": "airthings-wave-mini",
+      "name": {
+        "en": "Airthings Wave Mini"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_voc",
+        "measure_humidity",
+        "measure_pressure",
+        "measure_temperature"
+      ],
+      "images": {
+        "large": "/drivers/airthings-mini/assets/images/large.png",
+        "small": "/drivers/airthings-mini/assets/images/small.png"
+      },
+      "energy": {
+        "batteries": [
+          "AA",
+          "AA",
+          "AA"
+        ]
+      },
+      "pair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [ 
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        }
+      ],
+      "settings": [
+        {
+          "id": "pollInterval",
+          "type": "number",
+          "label": {
+            "en": "Poll interval in minutes (default is 2 minutes)"
+          },
+          "value": 2,
+          "min": 1,
+          "max": 999,
+          "hint": {
+            "en": "Define how often Homey should poll the Airthings API for latest samples from the Wave Mini."
+          }
+        }
+  ]
+    }
+  ]
+}
