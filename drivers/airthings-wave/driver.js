@@ -1,5 +1,6 @@
+'use strict';
+
 const { OAuth2Driver } = require('homey-oauth2app');
-const Homey = require('homey');
 
 module.exports = class AirthingsWavePlus extends OAuth2Driver {
 

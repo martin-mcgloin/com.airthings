@@ -1,3 +1,5 @@
+'use strict';
+
 const { OAuth2Device } = require('homey-oauth2app');
 
 module.exports = class AirthingsWaveMini extends OAuth2Device {
@@ -9,12 +11,12 @@ module.exports = class AirthingsWaveMini extends OAuth2Device {
   }
 
   async updateCapabilityValues() {
-    const device_id = await this.getData()['id'];
-    this.log(`Getting and updating latest samples for: ${device_id}`);
+    const deviceId = await this.getData()['id'];
+    this.log(`Getting and updating latest samples for: ${deviceId}`);
     try {
-      await this.oAuth2Client.getDeviceLatestSamples(device_id)
+      await this.oAuth2Client.getDeviceLatestSamples(deviceId)
         .then(async samples => {
-          const data = samples['data'];
+          const { data } = samples;
           this.log(data);
           await this.setCapabilityValue('measure_humidity', data.humidity);
           await this.setCapabilityValue('measure_pressure', data.pressure);
@@ -23,7 +25,7 @@ module.exports = class AirthingsWaveMini extends OAuth2Device {
           await this.setCapabilityValue('measure_mold', data.mold);
         });
     } catch (error) {
-      this.log(`Error getting latest samples for ${device_id}`);
+      this.log(`Error getting latest samples for ${deviceId}`);
       this.log(error);
     }
   }
