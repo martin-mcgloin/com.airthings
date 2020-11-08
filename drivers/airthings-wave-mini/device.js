@@ -15,10 +15,12 @@ module.exports = class AirthingsWaveMini extends OAuth2Device {
             await this.oAuth2Client.getDeviceLatestSamples(device_id)
                 .then(async samples => {
                     const data = samples['data']
+                    this.log(data)
                     await this.setCapabilityValue('measure_humidity', data.humidity);
                     await this.setCapabilityValue('measure_pressure', data.pressure);
                     await this.setCapabilityValue('measure_temperature', data.temp);
                     await this.setCapabilityValue('measure_voc', data.voc);
+                    await this.setCapabilityValue('measure_mold', data.mold);
                 });
         } catch (error) {
             this.log("Error getting latest samples for " + device_id)

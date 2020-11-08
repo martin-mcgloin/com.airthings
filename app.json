@@ -56,6 +56,23 @@
       "min": 0,
       "max": 3000,
       "step": 1
+    },
+    "measure_mold": {
+      "type": "number",
+      "title": {
+        "en": "Mold Risk"
+      },
+      "icon": "/assets/mold.svg",
+      "insights": false,
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": {
+        "en": "/10"
+      },
+      "min": 0,
+      "max": 10,
+      "step": 1
     }
   },
   "drivers": [
@@ -129,10 +146,11 @@
       },
       "class": "sensor",
       "capabilities": [
-        "measure_voc",
+        "measure_temperature",
         "measure_humidity",
-        "measure_pressure",
-        "measure_temperature"
+        "measure_voc",
+        "measure_mold",
+        "measure_pressure"
       ],
       "images": {
         "large": "/drivers/airthings-mini/assets/images/large.png",
