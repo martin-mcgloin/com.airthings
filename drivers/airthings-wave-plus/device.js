@@ -4,17 +4,17 @@ module.exports = class AirthingsWavePlus extends OAuth2Device {
 
   async onOAuth2Init() {
     this.pollDevice();
-    this.log("Calling Device onOAuth2Init");
-    this.updateCapabilityValues()
-  };
+    this.log('Calling Device onOAuth2Init');
+    this.updateCapabilityValues();
+  }
 
   async updateCapabilityValues() {
-    const device_id = await this.getData()['id']
-    this.log("Getting and updating latest samples for: " + device_id);
+    const device_id = await this.getData()['id'];
+    this.log(`Getting and updating latest samples for: ${device_id}`);
     try {
       await this.oAuth2Client.getDeviceLatestSamples(device_id)
         .then(async samples => {
-          const data = samples['data']
+          const data = samples['data'];
           await this.setCapabilityValue('measure_co2', data.co2);
           await this.setCapabilityValue('measure_humidity', data.humidity);
           await this.setCapabilityValue('measure_pressure', data.pressure);
@@ -25,16 +25,17 @@ module.exports = class AirthingsWavePlus extends OAuth2Device {
     } catch (error) {
       this.log(error);
     }
-  };
+  }
 
   async pollDevice() {
     this.pollingInterval = setInterval(async () => {
       this.updateCapabilityValues();
-    }
-      , 60000 * this.getSetting("pollInterval"))
-  };
+    },
+    60000 * this.getSetting('pollInterval'));
+  }
 
   async onOAuth2Deleted() {
     // Clean up here
-  };
-}
+  }
+
+};
