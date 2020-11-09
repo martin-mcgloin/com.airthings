@@ -1,5 +1,8 @@
 {
   "1.0.0": {
     "en": "Initial stable version with simple support for Airthings Wave Plus, Wave Mini and Wave 2nd gen."
+  },
+  "1.0.1": {
+    "en": "Updated the app description (README.txt) and the app images based on Homey app review feedback. "
   }
 }
