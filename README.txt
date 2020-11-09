@@ -1,10 +1,15 @@
-Connect your Homey with your Airthings Ecosystem
+Make your smart home, a healthy home!
 
-Integrate your Hub connected Airthings indoor air quality monitors to monitor and take action on your temperature, humidity, VOC, radon, and mold risk levels. 
+Airthings provides an ecosystem of indoor air quality devices to monitor the key air parameters that affect your wellbeing, health and even cognitive abilities. 
+This Homey integration enables you to connect your Airthings Ecosystem to both monitor and control your environment at home. 
+
+Example use cases include 
+- Turning your Hue bulbs red when CO2 levels exceed recommended levels to notify you to open a window.
+- Start an air purifiers when the VOC levels become harmful.
+- Control your heating and cooling with the temperature sensors
+- Start and stop you humidifiers and dehumidifiers to ensure optimal humdity levels.
+- Control a ventilation system or fan when radon levels rise.
 
 Device support:
-This app supports the Airthings Wave Plus, Airthings Wave Mini and the Airthings Wave (2nd gen.) that are connected to an Airthings Hub. 
-
-This app uses the Airthings REST API and OAuth2 flow to connect to your Airthings account. It requires that the devices are connected to an Airthings Hub. For BLE connection check out the other Airthings Homey app. 
-
-
+This Homey app uses the Airthings REST API to connect to your Airthings account. It supports integrations with the Airthings Wave Plus, Wave Mini and the Wave 2nd gen. 
+It is required that the devices are paired with an Airthings Hub.
