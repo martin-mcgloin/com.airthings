@@ -1,5 +1,3 @@
-Make your smart home, a healthy home!
-
 Airthings provides an ecosystem of indoor air quality devices to monitor the key air parameters that affect your wellbeing, health and even cognitive abilities. 
 This Homey integration enables you to connect your Airthings Ecosystem to both monitor and control your environment at home. 
 
