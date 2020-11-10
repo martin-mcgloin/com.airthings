@@ -4,5 +4,8 @@
   },
   "1.0.1": {
     "en": "Updated the app description (README.txt) and the app images based on Homey app review feedback. "
+  },
+  "1.0.2": {
+    "en": "Updated description fields based on review feedback"
   }
 }
